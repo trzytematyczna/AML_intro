@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_image"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".QuestionActivity" >
+<TextView
+        android:id="@+id/question_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:paddingRight="50dp"
+        android:textColor="#00aced"
+        android:textSize="9pt"
+        android:lineSpacingMultiplier="1.3"/>
+    
+        <RadioGroup
+        android:id="@+id/question_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_alignLeft="@+id/question_text"
+        android:layout_below="@+id/question_text"
+        android:layout_marginTop="30dp"   
+        android:paddingRight="50dp"  >
+
+
+    <RadioButton
+        android:id="@+id/answer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:onClick="recordAnswer"
+        android:textColor="#00aced"
+        android:textSize="5pt"
+        android:lineSpacingExtra="5dp"
+         />
+    
+<Space android:layout_height="10dp"/>
+
+    <RadioButton
+        android:id="@+id/answer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:onClick="recordAnswer"
+        android:textColor="#00aced"
+        android:textSize="5pt"
+        android:lineSpacingExtra="5dp"
+        />
+    
+<Space android:layout_height="10dp"/>
+
+    <RadioButton
+        android:id="@+id/answer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:onClick="recordAnswer"
+        android:textSize="5pt"
+        android:lineSpacingExtra="5dp"
+        android:textColor="#00aced"
+        />
+
+        </RadioGroup>
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="nextClick"
+            android:background="@drawable/button"
+            android:text="next"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/question_group" />
+            <!--android:layout_alignRight="@+id/question_group"-->
+            <!--android:layout_alignRight="@+id/question_group"-->
+            <!--android:layout_alignEnd="@+id/question_group"-->
+            <!--/>-->
+
+
+        <Button
+            android:id="@+id/prev_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="previousClick"
+            android:background="@drawable/button"
+            android:text="previous"
+            android:rotation="180"
+            android:layout_alignTop="@+id/next_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/next_button"
+            android:layout_toStartOf="@+id/next_button" />
+
+</RelativeLayout>
