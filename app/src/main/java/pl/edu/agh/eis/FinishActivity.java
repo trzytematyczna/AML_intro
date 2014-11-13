@@ -1,17 +1,39 @@
 package pl.edu.agh.eis;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class FinishActivity extends Activity {
-
+    private static final String USER_ANSWER = "answer";
+    Button finish;
+    long czas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        czas = getIntent().getLongExtra("time", 0);
         setContentView(R.layout.activity_finish);
+        finish = (Button) findViewById(R.id.finish_button);
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                czas = System.currentTimeMillis() - czas;
+                Intent intent = new Intent(getApplicationContext(), ScoreActivity.class );
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                intent.putExtra("time", czas);
+                intent.putExtra(USER_ANSWER, getIntent().getStringExtra(USER_ANSWER));
+                intent.putExtra("good", getIntent().getIntExtra("good",0));
+                intent.putExtra("bad",getIntent().getIntExtra("bad", 0));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(intent);
+            }
+        });
     }
 
 
