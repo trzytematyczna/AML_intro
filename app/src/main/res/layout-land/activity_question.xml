@@ -24,11 +24,11 @@
         android:id="@+id/question_group"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" 
-        android:layout_alignLeft="@+id/question_text"
-        android:layout_below="@+id/question_text"
-        android:layout_marginTop="30dp"   
-        android:paddingRight="50dp"  >
+        android:orientation="vertical"
+            android:paddingRight="50dp"
+            android:layout_alignTop="@+id/question_text"
+            android:layout_alignLeft="@+id/question_text"
+            android:layout_alignStart="@+id/question_text">
 
 
     <RadioButton
@@ -75,8 +75,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_button"
             android:text="next"
-            android:layout_centerVertical="true"
-            android:layout_alignEnd="@+id/question_group" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
             <!--android:layout_alignRight="@+id/question_group"-->
             <!--android:layout_alignRight="@+id/question_group"-->
             <!--android:layout_alignEnd="@+id/question_group"-->
@@ -90,11 +91,8 @@
             android:background="@drawable/ic_button"
             android:text="previous"
             android:rotation="180"
-            android:layout_alignTop="@+id/next_button"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/question_group"
-            android:layout_alignRight="@+id/question_text"
-            android:layout_alignEnd="@+id/question_text" />
+            android:layout_toStartOf="@+id/next_button"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/next_button" />
 
 </RelativeLayout>
